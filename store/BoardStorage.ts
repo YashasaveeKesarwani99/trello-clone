@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { getTodosGroupedByColumns } from "@/lib/getTodosGroupedByColumns";
 
 interface BoardState {
-  board: Board | undefined;
+  board: Board;
   getBoard: () => void;
 }
 
