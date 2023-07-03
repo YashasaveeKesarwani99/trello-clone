@@ -13,7 +13,9 @@ const Board = () => {
     getBoard();
   }, [getBoard]);
 
-  const handleOnDragEnd = (result: any) => {};
+  const handleOnDragEnd = (result: any) => {
+    const { destination, source, type } = result;
+  };
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
