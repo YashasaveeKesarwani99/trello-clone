@@ -3,7 +3,8 @@ import { getTodosGroupedByColumns } from "@/lib/getTodosGroupedByColumns";
 
 interface BoardState {
   board: Board;
-  getBoard: () => void;
+  getBoard: () => Promise<void>;
+  setBoardState: (board: Board) => void;
 }
 
 export const useBoardStore = create<BoardState>((set) => ({
@@ -15,4 +16,5 @@ export const useBoardStore = create<BoardState>((set) => ({
 
     set({ board });
   },
+  setBoardState: (board: Board) => set({ board }),
 }));
