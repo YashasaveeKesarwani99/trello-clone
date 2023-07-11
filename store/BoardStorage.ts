@@ -23,6 +23,7 @@ export const useBoardStore = create<BoardState>((set) => ({
   },
   setBoardState: (board: Board) => set({ board }),
   updateTodoInDB: async (todo, columnId) => {
+    console.log("here");
     await databases.updateDocument(
       process.env.NEXT_PUBLIC_DATABASE_ID!,
       process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!,

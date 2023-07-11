@@ -15,7 +15,7 @@ const Board = () => {
     getBoard();
   }, [getBoard]);
 
-  const handleOnDragEnd = (result: any) => {
+  const handleOnDragEnd = async (result: any) => {
     const { destination, source, type } = result;
 
     // Check if the user dragged card outside of the board
@@ -85,7 +85,7 @@ const Board = () => {
       });
 
       // Update in DB
-      updateTodoInDB(todoMoved, finishCol.id);
+      await updateTodoInDB(todoMoved, finishCol.id);
 
       setBoardState({ ...board, columns: newColumns });
     }
